@@ -33,7 +33,6 @@ app.post('/webhook', async (req, res) => {
       const isoDate = new Date(shipmentdate);
       const options = { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' };
       const newShipmentDate = isoDate.toLocaleDateString('en-US', options);
-      // Use the fetched data outside the block as needed
       if (shipmentdate) {
         agent.add(`Your order ${orderId} will be shipped on ${newShipmentDate}`);
       }
